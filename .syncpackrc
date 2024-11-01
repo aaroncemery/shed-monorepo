@@ -16,5 +16,18 @@
       ],
       "range": ""
     }
+  ],
+  "versionGroups": [
+    {
+      "label": "prefer react 18",
+      "packages": [
+        "**"
+      ],
+      "dependencies": [
+        "react",
+        "react-dom"
+      ],
+      "pinVersion": "^18.3.1"
+    }
   ]
 }
