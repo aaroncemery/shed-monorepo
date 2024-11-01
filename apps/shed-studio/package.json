@@ -2,6 +2,7 @@
   "name": "aarons-shed",
   "version": "1.0.0",
   "dependencies": {
+    "@repo/sanity-config": "workspace:*",
     "@sanity/vision": "3.62.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

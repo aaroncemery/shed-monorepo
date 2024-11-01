@@ -29,5 +29,6 @@
       ],
       "pinVersion": "^18.3.1"
     }
-  ]
+  ],
+  "formatRepository": "true"
 }
