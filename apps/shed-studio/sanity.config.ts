@@ -2,17 +2,13 @@ import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
+import {createBaseConfig} from '@repo/sanity-config'
 
-export default defineConfig({
-  name: 'default',
-  title: 'Aarons Shed',
-
+const baseConfig = createBaseConfig({
   projectId: '3p5kfswt',
   dataset: 'production',
-
-  plugins: [structureTool(), visionTool()],
-
-  schema: {
-    types: schemaTypes,
-  },
+  title: 'Aarons Shed',
+  additionalSchemas: schemaTypes,
 })
+
+export default baseConfig

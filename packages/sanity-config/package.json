@@ -1,5 +1,7 @@
 {
-  "name": "sanity-config",
+  "name": "@repo/sanity-config",
+  "description": "Package for Sanity configuration with global settings",
+  "version": "1.0.0",
   "dependencies": {
     "@sanity/assist": "3.0.8",
     "@sanity/image-url": "1.1.0",
