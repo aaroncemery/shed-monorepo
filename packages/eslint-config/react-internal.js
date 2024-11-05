@@ -25,6 +25,11 @@ module.exports = {
   env: {
     browser: true,
   },
+  rules: {
+    'simple-import-sort/imports': 'error', // Sort imports alphabetically
+    'simple-import-sort/exports': 'error', // Sort exports alphabetically
+    'sort-imports-es6-autofix/sort-imports-es6': 'error', // Additional sorting options
+  },
   settings: {
     'import/resolver': {
       typescript: {
