@@ -9,6 +9,7 @@ interface CreateBaseConfigProps {
   dataset: string;
   name?: string;
   title?: string;
+  basePath?: string;
   additionalSchemas?: SchemaTypeDefinition[];
   additionalPlugins?: PluginOptions[];
 }
@@ -18,12 +19,14 @@ export const createBaseConfig = ({
   dataset,
   name,
   title,
+  basePath,
   additionalSchemas = [],
   additionalPlugins = []
 }: CreateBaseConfigProps) => {
   return defineConfig({
     name: name ?? "default",
     title: title ?? "Default",
+    basePath: basePath ?? "/",
     projectId: projectId,
     dataset: dataset,
     schema: {
