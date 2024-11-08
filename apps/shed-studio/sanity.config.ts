@@ -2,6 +2,7 @@ import {schemaTypes} from './schemaTypes'
 import {createBaseConfig} from '@repo/sanity-config'
 import {defineConfig} from 'sanity'
 import {workspaceHome} from 'sanity-plugin-workspace-home'
+import {structureTool} from 'sanity/structure'
 
 const workspaceSelectorConfig = defineConfig({
   name: 'workspace-selector',
@@ -9,7 +10,7 @@ const workspaceSelectorConfig = defineConfig({
   basePath: '/workspaces',
   projectId: '3p5kfswt',
   dataset: 'production',
-  plugins: [workspaceHome()]
+  plugins: [workspaceHome(), structureTool()]
 })
 
 const mainWorkspaceConfig = createBaseConfig({
@@ -24,10 +25,20 @@ const mainWorkspaceConfig = createBaseConfig({
 
 const devWorkspaceConfig = createBaseConfig({
   projectId: '3p5kfswt',
-  dataset: 'production',
+  dataset: 'development',
   title: 'Aarons Shed Dev',
   name: 'dev',
   basePath: '/dev',
+  additionalSchemas: schemaTypes,
+  additionalPlugins: [workspaceHome()]
+})
+
+const stagingWorkspaceConfig = createBaseConfig({
+  projectId: '3p5kfswt',
+  dataset: 'staging',
+  title: 'Staging',
+  name: 'staging',
+  basePath: '/staging',
   additionalSchemas: schemaTypes,
   additionalPlugins: [workspaceHome()]
 })

@@ -1,3 +1,4 @@
 import Hero from './Hero'
+import Locale from './Locale'
 
-export default [Hero]
+export default [Hero, Locale]
