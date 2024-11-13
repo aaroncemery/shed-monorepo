@@ -45,3 +45,5 @@ export default defineType({
     })
   ]
 })
+
+// add a groq projection using a string parameter
