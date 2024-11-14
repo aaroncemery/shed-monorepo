@@ -3,6 +3,7 @@ import {createBaseConfig} from '@repo/sanity-config'
 import {defineConfig} from 'sanity'
 import {workspaceHome} from 'sanity-plugin-workspace-home'
 import {structureTool} from 'sanity/structure'
+import {languageFilter} from '@sanity/language-filter'
 
 const workspaceSelectorConfig = defineConfig({
   name: 'workspace-selector',
@@ -21,6 +22,42 @@ const mainWorkspaceConfig = createBaseConfig({
   basePath: '/main',
   additionalSchemas: schemaTypes,
   additionalPlugins: [workspaceHome()]
+})
+
+const i18nWorkspaceConfig = createBaseConfig({
+  projectId: '3p5kfswt',
+  dataset: 'production',
+  title: 'i18n Workspace',
+  name: 'i18n',
+  basePath: '/i18n',
+  additionalSchemas: schemaTypes,
+  additionalPlugins: [
+    workspaceHome(),
+    languageFilter({
+      supportedLanguages: [
+        {
+          id: 'en',
+          title: 'English'
+        },
+        {
+          id: 'fr',
+          title: 'French'
+        },
+        {
+          id: 'es',
+          title: 'Spanish'
+        }
+      ],
+      defaultLanguages: ['en'],
+      documentTypes: ['post'],
+      filterField: (enclosingType, member, selectedLanguageIds) => {
+        console.log('enclosingType', enclosingType.name.startsWith('locale'))
+        console.log('member', member.name)
+        console.log('selectedLanguageIds', selectedLanguageIds)
+        return !enclosingType.name.startsWith('locale') || selectedLanguageIds.includes(member.name)
+      }
+    })
+  ]
 })
 
 const devWorkspaceConfig = createBaseConfig({
@@ -43,4 +80,9 @@ const stagingWorkspaceConfig = createBaseConfig({
   additionalPlugins: [workspaceHome()]
 })
 
-export default [workspaceSelectorConfig, mainWorkspaceConfig, devWorkspaceConfig]
+export default [
+  workspaceSelectorConfig,
+  mainWorkspaceConfig,
+  devWorkspaceConfig,
+  i18nWorkspaceConfig
+]

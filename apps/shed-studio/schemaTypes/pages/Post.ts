@@ -1,23 +1,38 @@
 import {defineField, defineType} from 'sanity'
-import getLocales from '../components/getLocales'
+import {languageFilter} from '@sanity/language-filter'
 
-// console.log(locales)
+const supportedLanguages = [
+  {id: 'en', title: 'English'},
+  {id: 'fr', title: 'French'},
+  {id: 'es', title: 'Spanish'}
+]
 
 export default defineType({
   name: 'post',
   title: 'Post',
   type: 'document',
-  // groups: [
-  //   ...TranslatedLanguageComponent.map((locale) => ({
-  //     name: locale.language,
-  //     title: locale.language,
-  //     icon: 'globe'
-  //   }))
-  // ],
   fields: [
     defineField({
       name: 'title',
       title: 'Title',
+      type: 'string'
+    }),
+    defineField({
+      name: 'locale',
+      title: 'Locale',
+      type: 'object',
+      fields: supportedLanguages.map((language) => ({
+        name: language.id,
+        title: language.title,
+        type: 'localeString',
+        enclosingType: {
+          name: `locale-${language.id}`
+        }
+      }))
+    }),
+    defineField({
+      name: 'body',
+      title: 'Body',
       type: 'string'
     }),
     defineField({
@@ -37,13 +52,6 @@ export default defineType({
       name: 'hero',
       title: 'Hero',
       type: 'hero'
-    }),
-    defineField({
-      name: 'content',
-      title: 'Content',
-      type: 'portableText'
     })
   ]
 })
-
-// add a groq projection using a string parameter
