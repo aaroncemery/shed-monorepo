@@ -3,7 +3,8 @@ import { visionTool } from "@sanity/vision";
 import { defineConfig, SchemaTypeDefinition, PluginOptions } from "sanity";
 import { sharedSchemas } from "./schemas";
 import { structureTool } from "sanity/structure";
-
+import { assignTaskAction } from "./utils/assignTaskAction";
+import { TasksTool } from "./utils/TaskDashboard";
 interface CreateBaseConfigProps {
   projectId: string;
   dataset: string;
@@ -32,6 +33,13 @@ export const createBaseConfig = ({
     schema: {
       types: [...sharedSchemas, ...additionalSchemas]
     },
-    plugins: [structureTool(), assist(), visionTool(), ...additionalPlugins]
+    plugins: [structureTool(), assist(), visionTool(), ...additionalPlugins],
+    document: {
+      actions: (prev, context) => {
+        if (context.schemaType == "post") return [assignTaskAction];
+        return prev;
+      }
+    },
+    tools: [TasksTool]
   });
 };
