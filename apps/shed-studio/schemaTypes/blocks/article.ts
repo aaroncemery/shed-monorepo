@@ -1,19 +1,10 @@
 import {defineField, defineArrayMember} from 'sanity'
 
-const supportedLanguages = [
-  {id: 'en', title: 'English'},
-  {id: 'fr', title: 'French'},
-  {id: 'es', title: 'Spanish'}
-]
-
-export default defineField({
-  name: 'localeString',
-  title: 'Locale String',
-  type: 'object',
-  fields: supportedLanguages.map((language) => ({
-    name: `${language.id}`,
-    title: language.title,
+export const translationFieldsNewsInterface = (lang: string) =>
+  defineField({
+    name: 'lang',
     type: 'object',
+    hidden: true,
     fields: [
       defineField({
         name: 'title',
@@ -87,5 +78,4 @@ export default defineField({
         title: 'Custom URL'
       })
     ]
-  }))
-})
+  })

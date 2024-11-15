@@ -49,7 +49,7 @@ const i18nWorkspaceConfig = createBaseConfig({
         }
       ],
       defaultLanguages: ['en'],
-      documentTypes: ['post'],
+      documentTypes: ['post', 'article'],
       filterField: (enclosingType, member, selectedLanguageIds) => {
         console.log('enclosingType', enclosingType.name.startsWith('locale'))
         console.log('member', member.name)

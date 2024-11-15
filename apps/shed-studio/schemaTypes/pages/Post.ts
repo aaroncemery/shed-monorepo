@@ -20,15 +20,7 @@ export default defineType({
     defineField({
       name: 'locale',
       title: 'Locale',
-      type: 'object',
-      fields: supportedLanguages.map((language) => ({
-        name: language.id,
-        title: language.title,
-        type: 'localeString',
-        enclosingType: {
-          name: `locale-${language.id}`
-        }
-      }))
+      type: 'localeString'
     }),
     defineField({
       name: 'body',
