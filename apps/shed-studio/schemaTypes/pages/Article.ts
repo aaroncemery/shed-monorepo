@@ -31,7 +31,8 @@ export default defineType({
     defineField({
       name: 'content',
       title: 'Content',
-      type: 'localeString'
+      type: 'localeString',
+      group: 'story'
     })
   ],
   orderings: [
