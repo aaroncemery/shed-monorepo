@@ -1,21 +1,26 @@
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
-import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
+import {createBaseConfig} from '@repo/sanity-config'
+import {workspaceHome} from 'sanity-plugin-workspace-home'
 
-export default defineConfig({
-  name: 'default',
-  title: 'Workspaces',
-
+const workspaceSelectorConfig = defineConfig({
   projectId: 'jmb4q9hm',
   dataset: 'production',
-
-  plugins: [
-    structureTool(),
-    visionTool(),
-  ],
-
-  schema: {
-    types: schemaTypes,
-  },
+  title: 'Workspaces Home',
+  name: 'workspace-selector',
+  basePath: '/workspaces',
+  plugins: [workspaceHome(), structureTool()],
 })
+
+const mainWorkspaceConfig = createBaseConfig({
+  projectId: 'jmb4q9hm',
+  dataset: 'production',
+  title: 'Workspaces',
+  name: 'main',
+  basePath: '/main',
+  additionalSchemas: schemaTypes,
+  additionalPlugins: [workspaceHome()],
+})
+
+export default [workspaceSelectorConfig, mainWorkspaceConfig]
