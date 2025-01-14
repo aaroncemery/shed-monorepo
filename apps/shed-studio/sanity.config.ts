@@ -25,7 +25,7 @@ const mainWorkspaceConfig = createBaseConfig({
 
 const devWorkspaceConfig = createBaseConfig({
   projectId: '3p5kfswt',
-  dataset: 'development',
+  dataset: 'production',
   title: 'Aarons Shed Dev',
   name: 'dev',
   basePath: '/dev',
