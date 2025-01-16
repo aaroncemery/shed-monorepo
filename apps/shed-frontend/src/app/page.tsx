@@ -31,12 +31,14 @@ export default async function PostIndex() {
     <ul>
       {posts.map((post: Post) => (
         <li key={post._id}>
-          <Image
-            src={urlFor(post?.hero.image).url()}
-            width={100}
-            height={100}
-            alt={post?.title}
-          />
+          {post.hero?.image && (
+            <Image
+              src={urlFor(post.hero.image).url()}
+              width={100}
+              height={100}
+              alt={post.title}
+            />
+          )}
           <a href={`/posts/${post?.slug.current}`}>{post?.title}</a>
         </li>
       ))}
