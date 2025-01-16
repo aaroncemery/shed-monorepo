@@ -3,10 +3,10 @@
   "description": "Package for Sanity configuration with global settings",
   "version": "1.0.0",
   "dependencies": {
-    "@sanity/assist": "3.0.8",
+    "@sanity/assist": "3.1.0",
     "@sanity/image-url": "1.1.0",
-    "@sanity/preview-url-secret": "2.0.0",
-    "@sanity/vision": "3.62.3",
+    "@sanity/preview-url-secret": "2.1.0",
+    "@sanity/vision": "3.70.0",
     "date-fns": "4.1.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -16,14 +16,14 @@
     "@repo/eslint-config": "workspace:*",
     "eslint": "^8.57.1",
     "eslint-plugin-path-alias": "^2.1.0",
-    "sanity": "^3.62.3"
+    "sanity": "^3.70.0"
   },
   "exports": {
     ".": "./src/index.ts",
     "./package.json": "./package.json"
   },
   "peerDependencies": {
-    "sanity": "^3.62.3"
+    "sanity": "^3.70.0"
   },
   "scripts": {
     "lint": "turbo run lint:js",
