@@ -103,7 +103,7 @@ importers:
         specifier: workspace:*
         version: link:../../packages/sanity-config
       '@sanity/cli':
-        specifier: ^3.70.0
+        specifier: 3.70.0
         version: 3.70.0(@types/babel__core@7.20.5)(@types/node@22.10.7)(@types/react@18.3.12)(react@18.3.1)(typescript@5.6.3)
       '@sanity/vision':
         specifier: 3.70.0
@@ -10628,14 +10628,14 @@ snapshots:
 
   '@portabletext/block-tools@1.1.0(@sanity/types@3.70.0(@types/react@18.3.12)(debug@4.4.0))(@types/react@18.3.12)':
     dependencies:
-      '@sanity/types': 3.70.0(@types/react@18.3.12)(debug@4.4.0)
+      '@sanity/types': 3.70.0(@types/react@18.3.12)
       '@types/react': 18.3.12
       get-random-values-esm: 1.0.2
       lodash: 4.17.21
 
   '@portabletext/block-tools@1.1.0(@sanity/types@3.70.0(@types/react@18.3.18))(@types/react@18.3.18)':
     dependencies:
-      '@sanity/types': 3.70.0(@types/react@18.3.18)(debug@4.4.0)
+      '@sanity/types': 3.70.0(@types/react@18.3.18)
       '@types/react': 18.3.18
       get-random-values-esm: 1.0.2
       lodash: 4.17.21
@@ -10652,7 +10652,7 @@ snapshots:
       '@portabletext/block-tools': 1.1.0(@sanity/types@3.70.0(@types/react@18.3.12)(debug@4.4.0))(@types/react@18.3.12)
       '@portabletext/patches': 1.1.1
       '@sanity/schema': 3.70.0(@types/react@18.3.12)(debug@4.4.0)
-      '@sanity/types': 3.70.0(@types/react@18.3.12)(debug@4.4.0)
+      '@sanity/types': 3.70.0(@types/react@18.3.12)
       '@xstate/react': 5.0.2(@types/react@18.3.12)(react@18.3.1)(xstate@5.19.2)
       debug: 4.4.0
       get-random-values-esm: 1.0.2
@@ -10676,7 +10676,7 @@ snapshots:
       '@portabletext/block-tools': 1.1.0(@sanity/types@3.70.0(@types/react@18.3.18))(@types/react@18.3.18)
       '@portabletext/patches': 1.1.1
       '@sanity/schema': 3.70.0(@types/react@18.3.18)(debug@4.4.0)
-      '@sanity/types': 3.70.0(@types/react@18.3.18)(debug@4.4.0)
+      '@sanity/types': 3.70.0(@types/react@18.3.18)
       '@xstate/react': 5.0.2(@types/react@18.3.18)(react@18.3.1)(xstate@5.19.2)
       debug: 4.4.0
       get-random-values-esm: 1.0.2
@@ -11324,7 +11324,7 @@ snapshots:
   '@sanity/insert-menu@1.0.19(@emotion/is-prop-valid@1.2.2)(@sanity/types@3.70.0(@types/react@18.3.12)(debug@4.4.0))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
     dependencies:
       '@sanity/icons': 3.5.7(react@18.3.1)
-      '@sanity/types': 3.70.0(@types/react@18.3.12)(debug@4.4.0)
+      '@sanity/types': 3.70.0(@types/react@18.3.12)
       '@sanity/ui': 2.11.2(@emotion/is-prop-valid@1.2.2)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       lodash: 4.17.21
       react: 18.3.1
@@ -11337,7 +11337,7 @@ snapshots:
   '@sanity/insert-menu@1.0.19(@emotion/is-prop-valid@1.2.2)(@sanity/types@3.70.0(@types/react@18.3.18))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
     dependencies:
       '@sanity/icons': 3.5.7(react@18.3.1)
-      '@sanity/types': 3.70.0(@types/react@18.3.18)(debug@4.4.0)
+      '@sanity/types': 3.70.0(@types/react@18.3.18)
       '@sanity/ui': 2.11.2(@emotion/is-prop-valid@1.2.2)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       lodash: 4.17.21
       react: 18.3.1
@@ -11631,7 +11631,7 @@ snapshots:
   '@sanity/schema@3.70.0(@types/react@18.3.12)(debug@4.4.0)':
     dependencies:
       '@sanity/generate-help-url': 3.0.0
-      '@sanity/types': 3.70.0(@types/react@18.3.12)(debug@4.4.0)
+      '@sanity/types': 3.70.0(@types/react@18.3.12)
       arrify: 2.0.1
       groq-js: 1.14.2
       humanize-list: 1.0.1
@@ -11729,10 +11729,24 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
+  '@sanity/types@3.70.0(@types/react@18.3.12)':
+    dependencies:
+      '@sanity/client': 6.24.4(debug@4.4.0)
+      '@types/react': 18.3.12
+    transitivePeerDependencies:
+      - debug
+
   '@sanity/types@3.70.0(@types/react@18.3.12)(debug@4.4.0)':
     dependencies:
       '@sanity/client': 6.24.4(debug@4.4.0)
       '@types/react': 18.3.12
+    transitivePeerDependencies:
+      - debug
+
+  '@sanity/types@3.70.0(@types/react@18.3.18)':
+    dependencies:
+      '@sanity/client': 6.24.4(debug@4.4.0)
+      '@types/react': 18.3.18
     transitivePeerDependencies:
       - debug
 
@@ -16375,7 +16389,7 @@ snapshots:
       '@sanity/next-loader': 1.1.0(@sanity/client@6.24.4)(next@15.0.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       '@sanity/preview-kit': 5.1.10(@sanity/client@6.24.4)(react@18.3.1)
       '@sanity/preview-url-secret': 2.0.0(@sanity/client@6.24.4)
-      '@sanity/types': 3.70.0(@types/react@18.3.18)(debug@4.4.0)
+      '@sanity/types': 3.70.0(@types/react@18.3.18)
       '@sanity/ui': 2.11.2(@emotion/is-prop-valid@1.2.2)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       '@sanity/visual-editing': 2.4.2(@sanity/client@6.24.4)(next@15.0.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       groq: 3.70.0
@@ -17650,7 +17664,7 @@ snapshots:
       '@sanity/presentation': 1.21.3(@emotion/is-prop-valid@1.2.2)(@sanity/color@3.0.6)(debug@4.4.0)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       '@sanity/schema': 3.70.0(@types/react@18.3.12)(debug@4.4.0)
       '@sanity/telemetry': 0.7.9(react@18.3.1)
-      '@sanity/types': 3.70.0(@types/react@18.3.12)(debug@4.4.0)
+      '@sanity/types': 3.70.0(@types/react@18.3.12)
       '@sanity/ui': 2.11.2(@emotion/is-prop-valid@1.2.2)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       '@sanity/util': 3.70.0(@types/react@18.3.12)(debug@4.4.0)
       '@sanity/uuid': 3.0.2
